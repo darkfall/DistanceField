@@ -82,6 +82,59 @@ float Mandelbox(float3 p)
     return length(z) / factor;
 }
 
+float Menger(float3 pp)
+{
+    int i = 0;
+    float3 z = pp;
+    float t;
+    int iteration = 10;
+    while (i < iteration)
+    {
+        if (z.x < 0.0f)	z.x = -z.x;
+        if (z.y < 0.0f)	z.y = -z.y;
+        if (z.z < 0.0f)	z.z = -z.z;
+        if (z.x < z.y)
+        {
+            t = z.x;
+            z.x = z.y;
+            z.y = t;
+        }
+        if (z.x < z.z)
+        {
+            t = z.x;
+            z.x = z.z;
+            z.z = t;
+        }
+        if (z.y < z.z)
+        {
+            t = z.z;
+            z.z = z.y;
+            z.y = t;
+        }
+        z = z * 3.0f - float3(2.0f, 2.0f, 2.0f);
+        
+        if (z.z < -1.0f)
+        {
+            z.z += 2.0f;
+        }
+        i++;
+    }
+    
+    if (z.x < 0.0f)	z.x = -z.x;
+    if (z.y < 0.0f)	z.y = -z.y;
+    if (z.z < 0.0f)	z.z = -z.z;
+    
+    z = z - float3(1.0f, 1.0f, 1.0f);
+    float3 p = z;
+    if (p.x < 0.0f) p.x = 0.0f;
+    if (p.y < 0.0f) p.y = 0.0f;
+    if (p.z < 0.0f) p.z = 0.0f;
+    float dis = min(max(z.x, max(z.y, z.z)), 0.0f) + length(p);
+    
+    //scale cube size to iterations
+    return min(dis * pow(3.0f, -iteration), p.y + 1.0f);
+}
+
 struct Params
 {
     packed_float3 eye;
@@ -93,7 +146,7 @@ struct Params
     float fov;
 };
 
-#define DE Mandelbox
+#define DE Menger
 
 float3 GetNormal(float3 p, float eps)
 {
@@ -161,7 +214,7 @@ kernel void DistanceField(texture2d<float,access::write>  output  [[ texture(0) 
     }
     else
     {
-        //    output.write(float4(1, 0, 0, 1), gid);
+        output.write(float4(0, 0, 0, 1), gid);
     }
     
 }

@@ -33,6 +33,8 @@ let quadUV: [Float] = [
 
 class GameViewController: NSViewController, MTKViewDelegate {
     
+    override var acceptsFirstResponder: Bool { return true }
+    
     var device: MTLDevice! = nil
     
     var commandQueue: MTLCommandQueue! = nil
@@ -43,6 +45,7 @@ class GameViewController: NSViewController, MTKViewDelegate {
     var quadVertexBuffer: MTLBuffer! = nil
     var quadUVBuffer: MTLBuffer! = nil
     var sampler: MTLSamplerState! = nil
+    var trackingArea: NSTrackingArea! = nil
     
     let inflightSemaphore = dispatch_semaphore_create(MaxBuffers)
     var bufferIndex = 0
@@ -70,7 +73,19 @@ class GameViewController: NSViewController, MTKViewDelegate {
         let view = self.view as! MTKView
         view.delegate = self
         view.device = device
-        view.sampleCount = 4
+        view.sampleCount = 1
+        
+//        self.nextResponder = self.view
+//        for subview in self.view.subviews {
+//            subview.nextResponder = self
+//        }
+//        
+        let trackingOptions = NSTrackingAreaOptions(rawValue: NSTrackingAreaOptions.ActiveAlways.rawValue |
+                                                              NSTrackingAreaOptions.InVisibleRect.rawValue |
+                                                              NSTrackingAreaOptions.MouseEnteredAndExited.rawValue |
+                                                              NSTrackingAreaOptions.MouseMoved.rawValue)
+        trackingArea = NSTrackingArea(rect: self.view.bounds, options: trackingOptions, owner: self.view, userInfo: nil)
+        [self.view .addTrackingArea(trackingArea)]
         
         loadAssets()
     }
@@ -195,8 +210,23 @@ class GameViewController: NSViewController, MTKViewDelegate {
         
         commandBuffer.commit()
     }
-    
-    
+//    
+//    override func keyDown(theEvent: NSEvent) {
+//        
+//    }
+//    
+    override func mouseMoved(theEvent: NSEvent) {
+        let pos = self.view.convertPoint(theEvent.locationInWindow, fromView: self.view)
+        
+        camera.rotate(Float(self.view.bounds.size.width) / 2 - Float(pos.x),
+                      Float(pos.y) - Float(self.view.bounds.size.height) / 2)
+    }
+//
+//    override func mouseDown(theEvent: NSEvent) {
+//        
+//    }
+//    
+//    
     func mtkView(view: MTKView, drawableSizeWillChange size: CGSize) {
         
     }

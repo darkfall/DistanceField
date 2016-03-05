@@ -7,67 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332542BC1C868679006E88A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332542BB1C868679006E88A5 /* AppDelegate.swift */; };
+		332542BE1C868679006E88A5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332542BD1C868679006E88A5 /* GameViewController.swift */; };
+		332542C31C868679006E88A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332542C11C868679006E88A5 /* Main.storyboard */; };
+		332542C51C868679006E88A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 332542C41C868679006E88A5 /* Assets.xcassets */; };
+		332542C81C868679006E88A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332542C61C868679006E88A5 /* LaunchScreen.storyboard */; };
+		332542CE1C8686AE006E88A5 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F8131C80199A000BA8D5 /* Shaders.metal */; };
+		332542CF1C8686AE006E88A5 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F83C1C801AAE000BA8D5 /* Camera.swift */; };
+		332542D01C8686AE006E88A5 /* MTLDistanceField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3336BB281C84D52600F1748F /* MTLDistanceField.swift */; };
+		3336BB291C84D52600F1748F /* MTLDistanceField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3336BB281C84D52600F1748F /* MTLDistanceField.swift */; };
 		88C2F8101C80199A000BA8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F80F1C80199A000BA8D5 /* AppDelegate.swift */; };
 		88C2F8121C80199A000BA8D5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F8111C80199A000BA8D5 /* GameViewController.swift */; };
 		88C2F8141C80199A000BA8D5 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F8131C80199A000BA8D5 /* Shaders.metal */; };
 		88C2F8161C80199A000BA8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C2F8151C80199A000BA8D5 /* Assets.xcassets */; };
 		88C2F8191C80199A000BA8D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C2F8171C80199A000BA8D5 /* MainMenu.xib */; };
-		88C2F8241C80199A000BA8D5 /* DistanceFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F8231C80199A000BA8D5 /* DistanceFieldTests.swift */; };
-		88C2F82F1C80199B000BA8D5 /* DistanceFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F82E1C80199B000BA8D5 /* DistanceFieldUITests.swift */; };
 		88C2F83D1C801AAE000BA8D5 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2F83C1C801AAE000BA8D5 /* Camera.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		88C2F8201C80199A000BA8D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88C2F8041C80199A000BA8D5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88C2F80B1C80199A000BA8D5;
-			remoteInfo = DistanceField;
-		};
-		88C2F82B1C80199A000BA8D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88C2F8041C80199A000BA8D5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88C2F80B1C80199A000BA8D5;
-			remoteInfo = DistanceField;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		88C2F80C1C80199A000BA8D5 /* DistanceField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceField.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		332542B91C868679006E88A5 /* DistanceField_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceField_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		332542BB1C868679006E88A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		332542BD1C868679006E88A5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		332542C21C868679006E88A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		332542C41C868679006E88A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		332542C71C868679006E88A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		332542C91C868679006E88A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3336BB281C84D52600F1748F /* MTLDistanceField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTLDistanceField.swift; path = DistanceField/MTLDistanceField.swift; sourceTree = "<group>"; };
+		88C2F80C1C80199A000BA8D5 /* DistanceField_OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceField_OSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C2F80F1C80199A000BA8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C2F8111C80199A000BA8D5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		88C2F8131C80199A000BA8D5 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		88C2F8131C80199A000BA8D5 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = Shaders.metal; path = DistanceField/Shaders.metal; sourceTree = "<group>"; };
 		88C2F8151C80199A000BA8D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88C2F8181C80199A000BA8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		88C2F81A1C80199A000BA8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88C2F81F1C80199A000BA8D5 /* DistanceFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88C2F8231C80199A000BA8D5 /* DistanceFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFieldTests.swift; sourceTree = "<group>"; };
-		88C2F8251C80199A000BA8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88C2F82A1C80199A000BA8D5 /* DistanceFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88C2F82E1C80199B000BA8D5 /* DistanceFieldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFieldUITests.swift; sourceTree = "<group>"; };
-		88C2F8301C80199B000BA8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88C2F83C1C801AAE000BA8D5 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		88C2F8401C802707000BA8D5 /* Params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Params.h; sourceTree = "<group>"; };
+		88C2F83C1C801AAE000BA8D5 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = DistanceField/Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		332542B61C868679006E88A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88C2F8091C80199A000BA8D5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88C2F81C1C80199A000BA8D5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88C2F8271C80199A000BA8D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,12 +61,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		332542BA1C868679006E88A5 /* DistanceField_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				332542BB1C868679006E88A5 /* AppDelegate.swift */,
+				332542BD1C868679006E88A5 /* GameViewController.swift */,
+				332542C11C868679006E88A5 /* Main.storyboard */,
+				332542C41C868679006E88A5 /* Assets.xcassets */,
+				332542C61C868679006E88A5 /* LaunchScreen.storyboard */,
+				332542C91C868679006E88A5 /* Info.plist */,
+			);
+			path = DistanceField_iOS;
+			sourceTree = "<group>";
+		};
+		332542CD1C868692006E88A5 /* DistanceField */ = {
+			isa = PBXGroup;
+			children = (
+				88C2F8131C80199A000BA8D5 /* Shaders.metal */,
+				88C2F83C1C801AAE000BA8D5 /* Camera.swift */,
+				3336BB281C84D52600F1748F /* MTLDistanceField.swift */,
+			);
+			name = DistanceField;
+			sourceTree = "<group>";
+		};
 		88C2F8031C80199A000BA8D5 = {
 			isa = PBXGroup;
 			children = (
-				88C2F80E1C80199A000BA8D5 /* DistanceField */,
-				88C2F8221C80199A000BA8D5 /* DistanceFieldTests */,
-				88C2F82D1C80199A000BA8D5 /* DistanceFieldUITests */,
+				332542CD1C868692006E88A5 /* DistanceField */,
+				88C2F80E1C80199A000BA8D5 /* DistanceField_OSX */,
+				332542BA1C868679006E88A5 /* DistanceField_iOS */,
 				88C2F80D1C80199A000BA8D5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,52 +97,48 @@
 		88C2F80D1C80199A000BA8D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88C2F80C1C80199A000BA8D5 /* DistanceField.app */,
-				88C2F81F1C80199A000BA8D5 /* DistanceFieldTests.xctest */,
-				88C2F82A1C80199A000BA8D5 /* DistanceFieldUITests.xctest */,
+				88C2F80C1C80199A000BA8D5 /* DistanceField_OSX.app */,
+				332542B91C868679006E88A5 /* DistanceField_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88C2F80E1C80199A000BA8D5 /* DistanceField */ = {
+		88C2F80E1C80199A000BA8D5 /* DistanceField_OSX */ = {
 			isa = PBXGroup;
 			children = (
 				88C2F80F1C80199A000BA8D5 /* AppDelegate.swift */,
 				88C2F8111C80199A000BA8D5 /* GameViewController.swift */,
-				88C2F8131C80199A000BA8D5 /* Shaders.metal */,
-				88C2F83C1C801AAE000BA8D5 /* Camera.swift */,
 				88C2F8151C80199A000BA8D5 /* Assets.xcassets */,
 				88C2F8171C80199A000BA8D5 /* MainMenu.xib */,
 				88C2F81A1C80199A000BA8D5 /* Info.plist */,
-				88C2F8401C802707000BA8D5 /* Params.h */,
 			);
+			name = DistanceField_OSX;
 			path = DistanceField;
-			sourceTree = "<group>";
-		};
-		88C2F8221C80199A000BA8D5 /* DistanceFieldTests */ = {
-			isa = PBXGroup;
-			children = (
-				88C2F8231C80199A000BA8D5 /* DistanceFieldTests.swift */,
-				88C2F8251C80199A000BA8D5 /* Info.plist */,
-			);
-			path = DistanceFieldTests;
-			sourceTree = "<group>";
-		};
-		88C2F82D1C80199A000BA8D5 /* DistanceFieldUITests */ = {
-			isa = PBXGroup;
-			children = (
-				88C2F82E1C80199B000BA8D5 /* DistanceFieldUITests.swift */,
-				88C2F8301C80199B000BA8D5 /* Info.plist */,
-			);
-			path = DistanceFieldUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88C2F80B1C80199A000BA8D5 /* DistanceField */ = {
+		332542B81C868679006E88A5 /* DistanceField_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88C2F8331C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceField" */;
+			buildConfigurationList = 332542CA1C868679006E88A5 /* Build configuration list for PBXNativeTarget "DistanceField_iOS" */;
+			buildPhases = (
+				332542B51C868679006E88A5 /* Sources */,
+				332542B61C868679006E88A5 /* Frameworks */,
+				332542B71C868679006E88A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DistanceField_iOS;
+			productName = DistanceField_iOS;
+			productReference = 332542B91C868679006E88A5 /* DistanceField_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88C2F80B1C80199A000BA8D5 /* DistanceField_OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C2F8331C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceField_OSX" */;
 			buildPhases = (
 				88C2F8081C80199A000BA8D5 /* Sources */,
 				88C2F8091C80199A000BA8D5 /* Frameworks */,
@@ -145,46 +148,10 @@
 			);
 			dependencies = (
 			);
-			name = DistanceField;
+			name = DistanceField_OSX;
 			productName = DistanceField;
-			productReference = 88C2F80C1C80199A000BA8D5 /* DistanceField.app */;
+			productReference = 88C2F80C1C80199A000BA8D5 /* DistanceField_OSX.app */;
 			productType = "com.apple.product-type.application";
-		};
-		88C2F81E1C80199A000BA8D5 /* DistanceFieldTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 88C2F8361C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceFieldTests" */;
-			buildPhases = (
-				88C2F81B1C80199A000BA8D5 /* Sources */,
-				88C2F81C1C80199A000BA8D5 /* Frameworks */,
-				88C2F81D1C80199A000BA8D5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88C2F8211C80199A000BA8D5 /* PBXTargetDependency */,
-			);
-			name = DistanceFieldTests;
-			productName = DistanceFieldTests;
-			productReference = 88C2F81F1C80199A000BA8D5 /* DistanceFieldTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		88C2F8291C80199A000BA8D5 /* DistanceFieldUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 88C2F8391C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceFieldUITests" */;
-			buildPhases = (
-				88C2F8261C80199A000BA8D5 /* Sources */,
-				88C2F8271C80199A000BA8D5 /* Frameworks */,
-				88C2F8281C80199A000BA8D5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88C2F82C1C80199A000BA8D5 /* PBXTargetDependency */,
-			);
-			name = DistanceFieldUITests;
-			productName = DistanceFieldUITests;
-			productReference = 88C2F82A1C80199A000BA8D5 /* DistanceFieldUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -192,20 +159,16 @@
 		88C2F8041C80199A000BA8D5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Robert Bu";
 				TargetAttributes = {
+					332542B81C868679006E88A5 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = XPSUQMMH5W;
+					};
 					88C2F80B1C80199A000BA8D5 = {
 						CreatedOnToolsVersion = 7.2;
-					};
-					88C2F81E1C80199A000BA8D5 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 88C2F80B1C80199A000BA8D5;
-					};
-					88C2F8291C80199A000BA8D5 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 88C2F80B1C80199A000BA8D5;
 					};
 				};
 			};
@@ -222,14 +185,23 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88C2F80B1C80199A000BA8D5 /* DistanceField */,
-				88C2F81E1C80199A000BA8D5 /* DistanceFieldTests */,
-				88C2F8291C80199A000BA8D5 /* DistanceFieldUITests */,
+				88C2F80B1C80199A000BA8D5 /* DistanceField_OSX */,
+				332542B81C868679006E88A5 /* DistanceField_iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		332542B71C868679006E88A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				332542C81C868679006E88A5 /* LaunchScreen.storyboard in Resources */,
+				332542C51C868679006E88A5 /* Assets.xcassets in Resources */,
+				332542C31C868679006E88A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88C2F80A1C80199A000BA8D5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,23 +211,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88C2F81D1C80199A000BA8D5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88C2F8281C80199A000BA8D5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		332542B51C868679006E88A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				332542BE1C868679006E88A5 /* GameViewController.swift in Sources */,
+				332542BC1C868679006E88A5 /* AppDelegate.swift in Sources */,
+				332542CE1C8686AE006E88A5 /* Shaders.metal in Sources */,
+				332542CF1C8686AE006E88A5 /* Camera.swift in Sources */,
+				332542D01C8686AE006E88A5 /* MTLDistanceField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88C2F8081C80199A000BA8D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,42 +233,30 @@
 				88C2F83D1C801AAE000BA8D5 /* Camera.swift in Sources */,
 				88C2F8141C80199A000BA8D5 /* Shaders.metal in Sources */,
 				88C2F8121C80199A000BA8D5 /* GameViewController.swift in Sources */,
+				3336BB291C84D52600F1748F /* MTLDistanceField.swift in Sources */,
 				88C2F8101C80199A000BA8D5 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88C2F81B1C80199A000BA8D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				88C2F8241C80199A000BA8D5 /* DistanceFieldTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88C2F8261C80199A000BA8D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				88C2F82F1C80199B000BA8D5 /* DistanceFieldUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		88C2F8211C80199A000BA8D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 88C2F80B1C80199A000BA8D5 /* DistanceField */;
-			targetProxy = 88C2F8201C80199A000BA8D5 /* PBXContainerItemProxy */;
-		};
-		88C2F82C1C80199A000BA8D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 88C2F80B1C80199A000BA8D5 /* DistanceField */;
-			targetProxy = 88C2F82B1C80199A000BA8D5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
+		332542C11C868679006E88A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				332542C21C868679006E88A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		332542C61C868679006E88A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				332542C71C868679006E88A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		88C2F8171C80199A000BA8D5 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -310,6 +268,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		332542CB1C868679006E88A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = DistanceField_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.DistanceField-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		332542CC1C868679006E88A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = DistanceField_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.DistanceField-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		88C2F8311C80199B000BA8D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -414,63 +407,17 @@
 			};
 			name = Release;
 		};
-		88C2F8371C80199B000BA8D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = DistanceFieldTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gac.DistanceFieldTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DistanceField.app/Contents/MacOS/DistanceField";
-			};
-			name = Debug;
-		};
-		88C2F8381C80199B000BA8D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DistanceFieldTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gac.DistanceFieldTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DistanceField.app/Contents/MacOS/DistanceField";
-			};
-			name = Release;
-		};
-		88C2F83A1C80199B000BA8D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = DistanceFieldUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gac.DistanceFieldUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = DistanceField;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		88C2F83B1C80199B000BA8D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DistanceFieldUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gac.DistanceFieldUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = DistanceField;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		332542CA1C868679006E88A5 /* Build configuration list for PBXNativeTarget "DistanceField_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				332542CB1C868679006E88A5 /* Debug */,
+				332542CC1C868679006E88A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		88C2F8071C80199A000BA8D5 /* Build configuration list for PBXProject "DistanceField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -480,29 +427,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88C2F8331C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceField" */ = {
+		88C2F8331C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceField_OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88C2F8341C80199B000BA8D5 /* Debug */,
 				88C2F8351C80199B000BA8D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		88C2F8361C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceFieldTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				88C2F8371C80199B000BA8D5 /* Debug */,
-				88C2F8381C80199B000BA8D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		88C2F8391C80199B000BA8D5 /* Build configuration list for PBXNativeTarget "DistanceFieldUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				88C2F83A1C80199B000BA8D5 /* Debug */,
-				88C2F83B1C80199B000BA8D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

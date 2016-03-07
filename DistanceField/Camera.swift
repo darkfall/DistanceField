@@ -50,13 +50,13 @@ class quaternion
         w = a.w
     }
     
-    func rotate(_ v: vf3) -> vf3
+    func rotate(v: vf3) -> vf3
     {
         let u = vf3(x, y, z)
         let s = w
-        var result = u * dot(u, v) * 2.0
-        result = result + v * (s * s - dot(u, u))
-        result = result + cross(u, v) * s * 2.0
+        let result = u * dot(u, v) * 2.0 +
+                     v * (s * s - dot(u, u)) +
+                     cross(u, v) * s * 2.0
         return result
     }
     
@@ -104,7 +104,7 @@ class Camera
         
         self.update()
         
-        self.sensitiveFactor = 5.0;
+        self.sensitiveFactor = 100.0;
     }
     
     func update()
@@ -129,7 +129,7 @@ class Camera
         self.leftTopPoint = eye + upperLeftRay
     }
     
-    func rotate(_ yaw: Float, _ pitch: Float)
+    func rotate(yaw: Float, pitch: Float)
     {
         if (fabs(yaw) > 100.0 || fabs(pitch) > 100.0)
         {
@@ -142,15 +142,16 @@ class Camera
         let yawR = yawT / 180.0 * 3.1415926535897932
         let pitchR = pitchT / 180.0 * 3.1415926535897932
         
-        var qYaw = quaternion(self.up, yawR)
+        let qYaw = quaternion(self.up, yawR)
         self.dir = qYaw.rotate(self.dir)
         self.lookAt = self.eye + self.dir * 1000.0
         update()
         
-        var qPitch = quaternion(self.left, pitchR)
+        let qPitch = quaternion(self.left, pitchR)
         self.dir = qPitch.rotate(self.dir)
         self.up = qPitch.rotate(self.up)
         self.lookAt = self.eye + self.dir * 1000.0
+        
         update()
     }
     

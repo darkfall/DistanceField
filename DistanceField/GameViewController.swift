@@ -53,9 +53,10 @@ class GameViewController: NSViewController, MTKViewDelegate {
 //    
     override func mouseMoved(theEvent: NSEvent) {
         let pos = self.view.convertPoint(theEvent.locationInWindow, fromView: self.view)
-        
-        renderer.mouseMoved(Float(self.view.bounds.size.width) / 2 - Float(pos.x),
-                            y: Float(pos.y) - Float(self.view.bounds.size.height) / 2)
+//        
+//        renderer.mouseMoved(Float(self.view.bounds.size.width) / 2 - Float(pos.x),
+//                            y: Float(pos.y) - Float(self.view.bounds.size.height) / 2)
+        renderer.mouseMoved(Float(theEvent.deltaX), y: Float(theEvent.deltaY))
     }
 //
 //    override func mouseDown(theEvent: NSEvent) {

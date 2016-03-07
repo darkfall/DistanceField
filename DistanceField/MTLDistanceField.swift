@@ -48,7 +48,7 @@ class MTLDistanceField
     var bufferIndex = 0
     var width = 480
     var height = 320
-
+    
     init(isLowPower: Bool)
     {
 #if os(OSX)
@@ -192,6 +192,6 @@ class MTLDistanceField
     
     func mouseMoved(x: Float, y: Float)
     {
-        camera.rotate(x, y)
+        camera.rotate(-y, pitch: -x)
     }
 }

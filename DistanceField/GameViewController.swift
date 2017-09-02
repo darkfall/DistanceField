@@ -26,7 +26,7 @@ class GameViewController: NSViewController, MTKViewDelegate {
         
         super.viewDidLoad()
         
-        renderer = MTLDistanceField(isLowPower: false)
+        renderer = MTLDistanceField()
         
         let view = self.view as! MTKView
         view.delegate = self

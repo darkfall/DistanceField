@@ -9,7 +9,7 @@
 import Foundation
 import simd
 
-typealias vf3 = vector_float3;
+typealias vf3 = vector_float3
 
 class quaternion {
     var x,y,z,w: Float
@@ -46,26 +46,26 @@ class quaternion {
         let u = vf3(x, y, z)
         let s = w
         let result = u * dot(u, v) * 2.0 +
-                     v * (s * s - dot(u, u)) +
-                     cross(u, v) * s * 2.0
+                    v * (s * s - dot(u, u)) +
+                    cross(u, v) * s * 2.0
         return result
     }
 
-    static func * (left: inout quaternion, right: quaternion) -> quaternion {
+    static func * (left: quaternion, right: quaternion) -> quaternion {
         return quaternion(left.x * right.x - left.y * right.y - left.z * right.z - left.w * right.w,
                           left.x * right.y + left.y * right.x - left.z * right.w + left.w * right.z,
                           left.x * right.z + left.y * right.w + left.z * right.x - left.w * right.y,
                           left.x * right.w - left.y * right.z + left.z * right.y + left.w * right.x)
     }
 
-    static func + (left: inout quaternion, right: quaternion) -> quaternion {
+    static func + (left: quaternion, right: quaternion) -> quaternion {
         return quaternion(left.x + right.x,
                           left.y + right.y,
                           left.z + right.z,
                           left.w + right.w)
     }
 
-    static func * (left: inout quaternion, right: Float) -> quaternion {
+    static func * (left: quaternion, right: Float) -> quaternion {
         return quaternion(left.x * right,
                           left.y * right,
                           left.z * right,
@@ -83,57 +83,57 @@ class Camera {
     init(_ eye: vf3, _ lookAt: vf3, _ up: vf3,  _ fov: Float, _ vpWidth: Float, _ vpHeight: Float) {
         self.lookAt = lookAt
         self.eye = eye
-        self.viewportWidth = vpWidth;
-        self.viewportHeight = vpHeight;
+        self.viewportWidth = vpWidth
+        self.viewportHeight = vpHeight
         self.up = up
         self.fov = fov
         
-        self.update()
+        update()
         
-        self.sensitiveFactor = 100.0;
+        sensitiveFactor = 100.0
     }
     
     func update() {
-        let verticalFov = self.fov * self.viewportHeight / self.viewportWidth
+        let verticalFov = fov * viewportHeight / viewportWidth
         let centerRay = lookAt - eye
-        self.dir = normalize(centerRay)
+        dir = normalize(centerRay)
         
         let rayLength = length(centerRay)
-        self.left = normalize(cross(self.up, centerRay))
-        self.up = cross(self.dir, self.left)
+        left = normalize(cross(up, centerRay))
+        up = cross(dir, left)
         
         let lengthx = tan(fov / 2.0) * rayLength
         let lengthy = tan(verticalFov / 2.0) * rayLength
         
-        let leftVector = self.left * lengthx
+        let leftVector = left * lengthx
         let upVector = up * lengthy
         let upperLeftRay = centerRay + leftVector + upVector
         
-        self.xStep = leftVector * (2.0 / self.viewportWidth)
-        self.yStep = upVector * (2.0 / self.viewportHeight)
-        self.leftTopPoint = eye + upperLeftRay
+        xStep = leftVector * (2.0 / viewportWidth)
+        yStep = upVector * (2.0 / viewportHeight)
+        leftTopPoint = eye + upperLeftRay
     }
     
     func rotate(_ yaw: Float, pitch: Float) {
         if fabs(yaw) > 100.0 || fabs(pitch) > 100.0 {
             return
         }
-        
+
         let yawT = yaw / sensitiveFactor
         let pitchT = pitch / sensitiveFactor
         
         let yawR = yawT / 180.0 * 3.1415926535897932
         let pitchR = pitchT / 180.0 * 3.1415926535897932
-        
-        let qYaw = quaternion(self.up, yawR)
-        self.dir = qYaw.rotate(self.dir)
-        self.lookAt = self.eye + self.dir * 1000.0
+
+        let qYaw = quaternion(up, yawR)
+        dir = qYaw.rotate(dir)
+        lookAt = eye + dir * 1000.0
         update()
         
-        let qPitch = quaternion(self.left, pitchR)
-        self.dir = qPitch.rotate(self.dir)
-        self.up = qPitch.rotate(self.up)
-        self.lookAt = self.eye + self.dir * 1000.0
+        let qPitch = quaternion(left, pitchR)
+        dir = qPitch.rotate(dir)
+        up = qPitch.rotate(up)
+        lookAt = eye + dir * 1000.0
         
         update()
     }

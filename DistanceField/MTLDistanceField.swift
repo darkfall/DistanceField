@@ -11,8 +11,7 @@ import Metal
 
 let MaxBuffers = 3
 
-class MTLDistanceField
-{
+class MTLDistanceField {
     let ConstantBufferSize = 1024*1024
     
     let quadVertices: [Float] = [
@@ -49,7 +48,7 @@ class MTLDistanceField
     var width = 480
     var height = 320
     
-    init(isLowPower: Bool) {
+    init() {
         guard let device = MTLCreateSystemDefaultDevice() else {
             fatalError("Metal is not supported on this device")
         }
@@ -101,8 +100,7 @@ class MTLDistanceField
         self.height = height
     }
     
-    func draw(_ drawable: MTLDrawable, drawableRenderPassDescriptor: MTLRenderPassDescriptor)
-    {
+    func draw(_ drawable: MTLDrawable, drawableRenderPassDescriptor: MTLRenderPassDescriptor) {
         inflightSemaphore.wait(timeout: .distantFuture)
         
         let computeCmdBuffer = commandQueue.makeCommandBuffer()
@@ -121,7 +119,7 @@ class MTLDistanceField
         let paramBuffer = device.makeBuffer(bytes: params, length: MemoryLayout<Float>.size * params.count, options: [])
         
         computeEncoder.setBuffer(paramBuffer, offset: 0, at: 0)
-        let threadsPerGroup = MTLSize(width: 16, height: 16, depth: 1);
+        let threadsPerGroup = MTLSize(width: 16, height: 16, depth: 1)
         let numThreadgroups = MTLSize(width: Int(width+15) / threadsPerGroup.width, height: Int(height+15) / threadsPerGroup.height, depth: 1)
         
         computeEncoder.dispatchThreadgroups(numThreadgroups, threadsPerThreadgroup: threadsPerGroup)
@@ -163,8 +161,7 @@ class MTLDistanceField
         commandBuffer.commit()
     }
     
-    func mouseMoved(_ x: Float, y: Float)
-    {
+    func mouseMoved(_ x: Float, y: Float) {
         camera.rotate(-y, pitch: -x)
     }
 }

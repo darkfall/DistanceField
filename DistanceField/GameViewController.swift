@@ -10,6 +10,12 @@ import Cocoa
 import MetalKit
 import simd
 
+extension NSView {
+    func location(for event: NSEvent) -> CGPoint {
+        return convert(event.locationInWindow, from: nil)
+    }
+}
+
 class GameViewController: NSViewController, MTKViewDelegate {
     
     override var acceptsFirstResponder: Bool { return true }
@@ -27,12 +33,10 @@ class GameViewController: NSViewController, MTKViewDelegate {
         view.device = renderer.device
         view.sampleCount = 1
         
-        let trackingOptions = NSTrackingAreaOptions(rawValue: NSTrackingAreaOptions.activeAlways.rawValue |
-                                                              NSTrackingAreaOptions.inVisibleRect.rawValue |
-                                                              NSTrackingAreaOptions.mouseEnteredAndExited.rawValue |
-                                                              NSTrackingAreaOptions.mouseMoved.rawValue)
-        trackingArea = NSTrackingArea(rect: self.view.bounds, options: trackingOptions, owner: self.view, userInfo: nil)
-        [self.view .addTrackingArea(trackingArea)]
+        let trackingOptions : NSTrackingAreaOptions = [.activeAlways, .inVisibleRect, .mouseEnteredAndExited, .mouseMoved]
+
+        trackingArea = NSTrackingArea(rect: view.bounds, options: trackingOptions, owner: view, userInfo: nil)
+        view.addTrackingArea(trackingArea)
         
         loadAssets()
     }
@@ -51,12 +55,12 @@ class GameViewController: NSViewController, MTKViewDelegate {
 //        
 //    }
 //    
-    override func mouseMoved(with theEvent: NSEvent) {
-        let pos = self.view.convert(theEvent.locationInWindow, from: self.view)
+    override func mouseMoved(with event: NSEvent) {
+        let pos = view.location(for: event)
 //        
 //        renderer.mouseMoved(Float(self.view.bounds.size.width) / 2 - Float(pos.x),
 //                            y: Float(pos.y) - Float(self.view.bounds.size.height) / 2)
-        renderer.mouseMoved(Float(theEvent.deltaX), y: Float(theEvent.deltaY))
+        renderer.mouseMoved(Float(event.deltaX), y: Float(event.deltaY))
     }
 //
 //    override func mouseDown(theEvent: NSEvent) {

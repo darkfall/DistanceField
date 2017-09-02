@@ -92,9 +92,9 @@ class MTLDistanceField
         } catch let error {
             print("Failed to create compute pipeline state, error \(error)")
         }
-        
-        quadVertexBuffer = device.makeBuffer(bytes: quadVertices, length: MemoryLayout.size(ofValue: quadVertices[0]) * quadVertices.count, options: [])
-        quadUVBuffer = device.makeBuffer(bytes: quadUV, length: MemoryLayout.size(ofValue: quadUV[0]) * quadUV.count, options: [])
+
+        quadVertexBuffer = device.makeBuffer(bytes: quadVertices, length: MemoryLayout<Float>.size * quadVertices.count, options: [])
+        quadUVBuffer = device.makeBuffer(bytes: quadUV, length: MemoryLayout<Float>.size * quadUV.count, options: [])
         sampler = device.makeSamplerState(descriptor: MTLSamplerDescriptor())
 
         self.width = width
@@ -118,7 +118,7 @@ class MTLDistanceField
             camera.leftTopPoint.x, camera.leftTopPoint.y, camera.leftTopPoint.z,
             camera.viewportWidth, camera.viewportHeight, camera.fov
         ]
-        let paramBuffer = device.makeBuffer(bytes: params, length: MemoryLayout.size(ofValue: params[0]) * params.count, options: [])
+        let paramBuffer = device.makeBuffer(bytes: params, length: MemoryLayout<Float>.size * params.count, options: [])
         
         computeEncoder.setBuffer(paramBuffer, offset: 0, at: 0)
         let threadsPerGroup = MTLSize(width: 16, height: 16, depth: 1);
@@ -139,7 +139,7 @@ class MTLDistanceField
             }
             return
         }
-        
+
         let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: drawableRenderPassDescriptor)
         renderEncoder.label = "render encoder"
         

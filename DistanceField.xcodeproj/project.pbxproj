@@ -32,7 +32,7 @@
 		332542C41C868679006E88A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		332542C71C868679006E88A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		332542C91C868679006E88A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3336BB281C84D52600F1748F /* MTLDistanceField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTLDistanceField.swift; path = DistanceField/MTLDistanceField.swift; sourceTree = "<group>"; };
+		3336BB281C84D52600F1748F /* MTLDistanceField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTLDistanceField.swift; path = DistanceField/MTLDistanceField.swift; sourceTree = "<group>"; usesTabs = 0; };
 		88C2F80C1C80199A000BA8D5 /* DistanceField_OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceField_OSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C2F80F1C80199A000BA8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C2F8111C80199A000BA8D5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };

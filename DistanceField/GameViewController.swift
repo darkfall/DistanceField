@@ -27,10 +27,10 @@ class GameViewController: NSViewController, MTKViewDelegate {
         view.device = renderer.device
         view.sampleCount = 1
         
-        let trackingOptions = NSTrackingAreaOptions(rawValue: NSTrackingAreaOptions.ActiveAlways.rawValue |
-                                                              NSTrackingAreaOptions.InVisibleRect.rawValue |
-                                                              NSTrackingAreaOptions.MouseEnteredAndExited.rawValue |
-                                                              NSTrackingAreaOptions.MouseMoved.rawValue)
+        let trackingOptions = NSTrackingAreaOptions(rawValue: NSTrackingAreaOptions.activeAlways.rawValue |
+                                                              NSTrackingAreaOptions.inVisibleRect.rawValue |
+                                                              NSTrackingAreaOptions.mouseEnteredAndExited.rawValue |
+                                                              NSTrackingAreaOptions.mouseMoved.rawValue)
         trackingArea = NSTrackingArea(rect: self.view.bounds, options: trackingOptions, owner: self.view, userInfo: nil)
         [self.view .addTrackingArea(trackingArea)]
         
@@ -43,7 +43,7 @@ class GameViewController: NSViewController, MTKViewDelegate {
         renderer.loadAssets(view.colorPixelFormat, sampleCount: view.sampleCount, width: Int(view.frame.size.width), height: Int(view.frame.size.height))
     }
     
-    func drawInMTKView(view: MTKView) {
+    func draw(in view: MTKView) {
         renderer.draw(view.currentDrawable!, drawableRenderPassDescriptor: view.currentRenderPassDescriptor!)
     }
 //    
@@ -51,8 +51,8 @@ class GameViewController: NSViewController, MTKViewDelegate {
 //        
 //    }
 //    
-    override func mouseMoved(theEvent: NSEvent) {
-        let pos = self.view.convertPoint(theEvent.locationInWindow, fromView: self.view)
+    override func mouseMoved(with theEvent: NSEvent) {
+        let pos = self.view.convert(theEvent.locationInWindow, from: self.view)
 //        
 //        renderer.mouseMoved(Float(self.view.bounds.size.width) / 2 - Float(pos.x),
 //                            y: Float(pos.y) - Float(self.view.bounds.size.height) / 2)
@@ -64,7 +64,7 @@ class GameViewController: NSViewController, MTKViewDelegate {
 //    }
 //    
 //    
-    func mtkView(view: MTKView, drawableSizeWillChange size: CGSize) {
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         
     }
 }

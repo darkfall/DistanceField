@@ -50,7 +50,7 @@ class quaternion
         w = a.w
     }
     
-    func rotate(v: vf3) -> vf3
+    func rotate(_ v: vf3) -> vf3
     {
         let u = vf3(x, y, z)
         let s = w
@@ -66,7 +66,7 @@ class quaternion
     }
 }
 
-func * (inout left: quaternion, right: quaternion) -> quaternion
+func * (left: inout quaternion, right: quaternion) -> quaternion
 {
     return quaternion(left.x * right.x - left.y * right.y - left.z * right.z - left.w * right.w,
                       left.x * right.y + left.y * right.x - left.z * right.w + left.w * right.z,
@@ -74,7 +74,7 @@ func * (inout left: quaternion, right: quaternion) -> quaternion
                       left.x * right.w - left.y * right.z + left.z * right.y + left.w * right.x)
 }
 
-func + (inout left: quaternion, right: quaternion) -> quaternion
+func + (left: inout quaternion, right: quaternion) -> quaternion
 {
     return quaternion(left.x + right.x,
                       left.y + right.y,
@@ -82,7 +82,7 @@ func + (inout left: quaternion, right: quaternion) -> quaternion
                       left.w + right.w)
 }
 
-func * (inout left: quaternion, right: Float) -> quaternion
+func * (left: inout quaternion, right: Float) -> quaternion
 {
     return quaternion(left.x * right,
                       left.y * right,
@@ -129,7 +129,7 @@ class Camera
         self.leftTopPoint = eye + upperLeftRay
     }
     
-    func rotate(yaw: Float, pitch: Float)
+    func rotate(_ yaw: Float, pitch: Float)
     {
         if (fabs(yaw) > 100.0 || fabs(pitch) > 100.0)
         {
